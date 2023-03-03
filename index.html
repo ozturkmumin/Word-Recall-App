@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Kelime Öğrenme Uygulaması</title>
+          <style>
+               /* Stil tanımlamaları */
+               body {
+                    font-family: sans-serif;
+               }
+               label,
+               input {
+                    display: block;
+                    margin-bottom: 10px;
+               }
+               input[type="submit"] {
+                    margin-top: 10px;
+               }
+               .word-list {
+                    margin-top: 20px;
+               }
+               .word-list h2 {
+                    margin-top: 0;
+               }
+               .word-list li {
+                    list-style: none;
+                    margin-bottom: 10px;
+               }
+          </style>
+     </head>
+     <body>
+          <h1>Kelime Öğrenme Uygulaması</h1>
+
+          <form id="word-form">
+               <label for="word-input">Kelime:</label>
+               <input type="text" id="word-input" required />
+               <label for="meaning-input">Anlam:</label>
+               <input type="text" id="meaning-input" required />
+               <input type="submit" value="Kaydet" />
+          </form>
+
+          <div id="reminder-container"></div>
+
+          <div class="word-list">
+               <h2>Kaydedilmiş Kelimeler</h2>
+               <ul id="word-list-ul"></ul>
+          </div>
+          <script src="index.js"></script>
+     </body>
+</html>
