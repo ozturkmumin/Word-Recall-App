@@ -4,32 +4,118 @@
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Kelime Öğrenme Uygulaması</title>
-          <link rel="stylesheet" href="style.css" />
-          <link
-               href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-               rel="stylesheet"
-               integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-               crossorigin="anonymous"
-          />
+          <title>Word Recall</title>
+          <link rel="stylesheet" href="assets/css/style.css" />
+          <link rel="stylesheet" href="assets/css/reset.css" />
+          <link rel="stylesheet" href="assets/css/hamburger.css" />
+          <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css" />
      </head>
      <body>
-          <h1>Kelime Öğrenme Uygulaması</h1>
+          <div class="app">
+               <div class="hamburger-menu d-lg-none">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                         <span></span>
+                    </label>
 
-          <form id="word-form">
-               <label for="word-input">Kelime:</label>
-               <input type="text" id="word-input" required />
-               <label for="meaning-input">Anlam:</label>
-               <input type="text" id="meaning-input" required />
-               <input type="submit" value="Kaydet" />
-          </form>
+                    <ul class="menu__box">
+                         <li><a class="menu__item" href="#">New Word</a></li>
+                         <li><a class="menu__item" href="#">Old Words</a></li>
+                         <li><a class="menu__item" href="#"> Notes</a></li>
+                         <li><a class="menu__item" href="#">Favorite Words</a></li>
+                    </ul>
+               </div>
+               <div class="row">
+                    <div class="col-lg-2 d-none d-lg-block pe-0">
+                         <div class="left-menu">
+                              <div class="d-flex flex-column">
+                                   <div id="add-words" class="d-flex align-items-center add-word p-3">
+                                        <svg
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke-width="1.5"
+                                             stroke="currentColor"
+                                             class="w-6 h-6 svg-setting"
+                                        >
+                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                        </svg>
 
-          <div id="reminder-container"></div>
+                                        <p>New Word</p>
+                                   </div>
+                                   <div onclick="screenoldword()" id="old-words" class="d-flex old-words p-3">
+                                        <svg
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke-width="1.5"
+                                             stroke="currentColor"
+                                             class="w-6 h-6 child-svg"
+                                        >
+                                             <path
+                                                  stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+                                             />
+                                        </svg>
+                                        Old Words
+                                   </div>
+                                   <div id="add-notes" class="d-flex add-notes p-3">
+                                        <svg
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke-width="1.5"
+                                             stroke="currentColor"
+                                             class="w-6 h-6 child-svg"
+                                        >
+                                             <path
+                                                  stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                                             />
+                                        </svg>
+                                        Notes
+                                   </div>
+                                   <div id="add-fav" class="d-flex add-favorite-words p-3">
+                                        <svg
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke-width="1.5"
+                                             stroke="currentColor"
+                                             class="w-6 h-6 child-svg"
+                                        >
+                                             <path
+                                                  stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+                                             />
+                                        </svg>
 
-          <div class="word-list">
-               <h2>Kaydedilmiş Kelimeler</h2>
-               <ul id="word-list-ul"></ul>
+                                        Favorite Words
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div id="write-note" class="col-lg-3 d-block px-0">
+                         <div class="Remember-word h-100">
+                              <div class="note-sidebar-header">
+                                   <input class="w-100" data-testid="note-search" type="search" placeholder="Search for notes" />
+                              </div>
+                         </div>
+                    </div>
+                    <div id="remember-word" class="col-lg-3 d-none px-0">
+                         <div class="Remember-word h-100">
+                              <div class="note-sidebar-header">
+                                   <p>You Old Words</p>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-7 px-0"><div class="Remember-word h-100">sad</div></div>
+               </div>
           </div>
           <script src="index.js"></script>
+          <script src="assets/bootstrap-js/bootstrap.bundle.js"></script>
      </body>
 </html>

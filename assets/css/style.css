@@ -1,0 +1,93 @@
+body {
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+     font-size: 25px;
+}
+label,
+input {
+     display: block;
+     margin-bottom: 10px;
+}
+input[type="submit"] {
+     margin-top: 10px;
+}
+.word-list {
+     margin-top: 20px;
+}
+.word-list h2 {
+     margin-top: 0;
+}
+.word-list li {
+     list-style: none;
+     margin-bottom: 10px;
+}
+/*App*/
+.app {
+     height: 100vh;
+     position: relative;
+}
+
+/*LEFT MENU*/
+.left-menu {
+     background-color: #2d2d2d;
+     color: white;
+     font-weight: bold;
+     height: 100vh;
+}
+
+.add-word,
+.add-favorite-words,
+.add-notes,
+.old-words {
+     gap: 5px;
+     transition: all 0.2s linear; /* vendorless fallback */
+}
+.child-svg {
+     width: 25px;
+     height: 25px;
+}
+.add-word:hover,
+.add-favorite-words:hover,
+.add-notes:hover,
+.old-words:hover {
+     background-color: #355efc;
+     cursor: pointer;
+}
+.svg-setting {
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     background-color: #355efc;
+     color: white;
+}
+/*Remember-word*/
+.Remember-word {
+     background-color: #f1f1f1;
+     border-right: 1px solid #919191;
+}
+@media screen and (max-width: 991px) {
+     .Remember-word {
+          background-color: #ffffff;
+          margin-top: 40px;
+          padding: 0px 40px 0px 40px;
+     }
+     .note-sidebar-header {
+          background-color: #ffffff;
+     }
+}
+.note-sidebar-header {
+     display: flex;
+     align-items: center;
+     text-align: center;
+     font-weight: 700;
+     background: #e5e5e5;
+     height: 49px;
+     padding: 0 0.5rem;
+     border-bottom: 1px solid #ccc;
+}
+.note-sidebar-header input {
+     margin: 0;
+     min-width: 0;
+     padding: 0.5rem;
+}
