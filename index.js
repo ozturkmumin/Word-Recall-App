@@ -15,7 +15,3 @@ var addnotes = document.getElementById("add-notes");
 var addfav = document.getElementById("add-fav");
 var rememberword = document.getElementById("remember-word");
 var writenote = document.getElementById("write-note");
-oldwords.addEventListener("click", () => {
-     writenote.classList.add("d-none");
-     rememberword.classList.add("d-block");
-});

@@ -20,30 +20,32 @@
                     </label>
 
                     <ul class="menu__box">
-                         <li><a class="menu__item" href="#">New Word</a></li>
+                         <li><a class="menu__item" href="index.html">New Word</a></li>
                          <li><a class="menu__item" href="oldwords.html">Old Words</a></li>
                          <li><a class="menu__item" href="notes.html"> Notes</a></li>
-                         <li><a class="menu__item" href="favoritewords.html">Favorite Words</a></li>
+                         <li><a class="menu__item" href="#">Favorite Words</a></li>
                     </ul>
                </div>
                <div class="row">
                     <div class="col-lg-2 d-none d-lg-block pe-0">
                          <div class="left-menu">
                               <div class="d-flex flex-column">
-                                   <div id="add-words" class="d-flex align-items-center add-word p-3">
-                                        <svg
-                                             xmlns="http://www.w3.org/2000/svg"
-                                             fill="none"
-                                             viewBox="0 0 24 24"
-                                             stroke-width="1.5"
-                                             stroke="currentColor"
-                                             class="w-6 h-6 svg-setting"
-                                        >
-                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                        </svg>
+                                   <a href="index.html">
+                                        <div id="add-words" class="d-flex align-items-center add-word p-3">
+                                             <svg
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                  fill="none"
+                                                  viewBox="0 0 24 24"
+                                                  stroke-width="1.5"
+                                                  stroke="currentColor"
+                                                  class="w-6 h-6 svg-setting"
+                                             >
+                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                             </svg>
 
-                                        <p>New Word</p>
-                                   </div>
+                                             <p>New Word</p>
+                                        </div>
+                                   </a>
                                    <a href="oldwords.html">
                                         <div id="old-words" class="d-flex old-words p-3">
                                              <svg
@@ -61,8 +63,8 @@
                                                   />
                                              </svg>
                                              Old Words
-                                        </div></a
-                                   >
+                                        </div>
+                                   </a>
                                    <a href="notes.html">
                                         <div id="add-notes" class="d-flex add-notes p-3">
                                              <svg
@@ -82,33 +84,31 @@
                                              Notes
                                         </div>
                                    </a>
-                                   <a href="favoritewords.html">
-                                        <div id="add-fav" class="d-flex add-favorite-words p-3">
-                                             <svg
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  fill="none"
-                                                  viewBox="0 0 24 24"
-                                                  stroke-width="1.5"
-                                                  stroke="currentColor"
-                                                  class="w-6 h-6 child-svg"
-                                             >
-                                                  <path
-                                                       stroke-linecap="round"
-                                                       stroke-linejoin="round"
-                                                       d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                                                  />
-                                             </svg>
+                                   <div id="add-fav" class="d-flex add-favorite-words p-3">
+                                        <svg
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke-width="1.5"
+                                             stroke="currentColor"
+                                             class="w-6 h-6 child-svg"
+                                        >
+                                             <path
+                                                  stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+                                             />
+                                        </svg>
 
-                                             Favorite Words
-                                        </div>
-                                   </a>
+                                        Favorite Words
+                                   </div>
                               </div>
                          </div>
                     </div>
-                    <div id="write-note" class="col-lg-3 px-0">
+                    <div id="remember-word" class="col-lg-3 d-block px-0">
                          <div class="Remember-word h-100">
                               <div class="note-sidebar-header">
-                                   <input class="w-100" data-testid="note-search" type="search" placeholder="Search for words" />
+                                   <p>Favorite Words</p>
                               </div>
                          </div>
                     </div>

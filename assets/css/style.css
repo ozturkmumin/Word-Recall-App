@@ -35,7 +35,9 @@ input[type="submit"] {
      font-weight: bold;
      height: 100vh;
 }
-
+.left-menu a {
+     color: white;
+}
 .add-word,
 .add-favorite-words,
 .add-notes,
