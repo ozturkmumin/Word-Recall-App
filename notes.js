@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const addword = document.querySelector("#add-first");
+const addnotes = document.querySelector("#notes");
 const addmeaning = document.querySelector("#add-meaning");
 const btnDeleteAll = document.querySelector("#clearbtn");
 const taskList = document.querySelector("#myword");
@@ -9,7 +9,6 @@ loadItems();
 
 function eventListeners() {
      form.addEventListener("submit", addNewItem);
-     taskList.addEventListener("click", deleteItem);
 }
 function loadItems() {
      createItem = getItemsFromLs();
@@ -66,21 +65,21 @@ function deleteItem(e) {
 }
 
 function addNewItem(e) {
-     if (addword.value === "") {
+     if (addnotes.value === "") {
           alert("add new item");
      }
 
      const li = document.createElement("span");
 
-     li.appendChild(document.createTextNode(addword.value));
+     li.appendChild(document.createTextNode(addnotes.value));
      li.appendChild(document.createTextNode(addmeaning.value));
      const div = document.createElement("div");
 
      li.appendChild(div);
 
      taskList.appendChild(li);
-     setItemToLS(addword.value);
-     addword.value = "";
+     setItemToLS(addnotes.value);
+     addnotes.value = "";
      setItemToLS(addmeaning.value);
      addmeaning.value = "";
 

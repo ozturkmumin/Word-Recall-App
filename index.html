@@ -30,7 +30,7 @@
                     <div class="col-lg-2 d-none d-lg-block pe-0">
                          <div class="left-menu">
                               <div class="d-flex flex-column">
-                                   <div id="add-words" class="d-flex align-items-center add-word p-3">
+                                   <div class="d-flex align-items-center add-word p-3">
                                         <svg
                                              xmlns="http://www.w3.org/2000/svg"
                                              fill="none"
@@ -107,12 +107,32 @@
                     </div>
                     <div id="write-note" class="col-lg-3 px-0">
                          <div class="Remember-word h-100">
-                              <div class="note-sidebar-header">
-                                   <input class="w-100" data-testid="note-search" type="search" placeholder="Search for words" />
-                              </div>
+                              <form id="add-words" class="note-sidebar-header d-flex flex-column pt-lg-3">
+                                   <input
+                                        id="add-first"
+                                        class="w-100"
+                                        data-testid="note-search"
+                                        type="search"
+                                        placeholder="Write for words"
+                                        required
+                                   />
+                                   <input
+                                        id="add-meaning"
+                                        class="w-100"
+                                        data-testid="note-search"
+                                        type="search"
+                                        placeholder="Write for meaning"
+                                        required
+                                   />
+                                   <button id="submit-btn">submit</button>
+
+                                   <button id="clearbtn">clear</button>
+                              </form>
                          </div>
                     </div>
-                    <div class="col-lg-7 px-0"><div class="Remember-word h-100">sad</div></div>
+                    <div class="col-lg-7 px-0">
+                         <div class="Remember-word h-100"><div id="myword" class="myword"></div></div>
+                    </div>
                </div>
           </div>
           <script src="index.js"></script>

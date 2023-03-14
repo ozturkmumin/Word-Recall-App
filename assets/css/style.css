@@ -82,14 +82,20 @@ input[type="submit"] {
      display: flex;
      align-items: center;
      text-align: center;
+     gap: 20px;
      font-weight: 700;
-     background: #e5e5e5;
      height: 49px;
      padding: 0 0.5rem;
-     border-bottom: 1px solid #ccc;
 }
 .note-sidebar-header input {
      margin: 0;
      min-width: 0;
      padding: 0.5rem;
+}
+.deneme {
+     display: block;
+     gap: 25px;
+}
+form {
+     width: 100%;
 }
