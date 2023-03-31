@@ -105,22 +105,36 @@
                               </div>
                          </div>
                     </div>
-                    <div id="remember-word" class="col-lg-3 d-block px-0">
-                         <div class="Remember-word h-100 d-flex flex-column">
-                              <div class="note-sidebar-header">
-                                   <p>Your Notes</p>
-                              </div>
-                              <div class="Remember-word h-100">
-                                   <div class="note-sidebar-header">
-                                        <form>
-                                             <input id="notes" class="w-100" data-testid="note-search" type="search" placeholder="Write for notes" />
-                                             <button id="save-btn">Kaydet</button>
-                                        </form>
+                    <div id="write-note" class="col-lg-3 col-12 mt-lg-0 mt-5 px-0">
+                         <div class="Remember-word h-100">
+                              <form>
+                                   <input
+                                        id="add-note"
+                                        class="w-100"
+                                        data-testid="note-search"
+                                        type="search"
+                                        placeholder="Write for words"
+                                        required
+                                   />
+
+                                   <div class="btn-area d-flex justify-content-center align-items-center w-100">
+                                        <div>
+                                             <button class="note-btn" id="submit-btn">Save</button>
+                                        </div>
+                                        <div>
+                                             <button class="note-btn" id="clearbtn">Clear</button>
+                                        </div>
                                    </div>
+                              </form>
+                         </div>
+                    </div>
+                    <div class="mt-small col-lg-7 col-12 px-0">
+                         <div class="Remember-word h-100">
+                              <div id="myword" class="myword">
+                                   <div id="save-note" class="d-flex flex-column"></div>
                               </div>
                          </div>
                     </div>
-                    <div class="col-lg-7 px-0"><div class="Remember-word h-100">sad</div></div>
                </div>
           </div>
           <script src="notes.js"></script>

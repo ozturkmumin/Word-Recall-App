@@ -71,7 +71,6 @@ input[type="submit"] {
 @media screen and (max-width: 991px) {
      .Remember-word {
           background-color: #ffffff;
-          margin-top: 40px;
           padding: 0px 40px 0px 40px;
      }
      .note-sidebar-header {
@@ -98,4 +97,43 @@ input[type="submit"] {
 }
 form {
      width: 100%;
+}
+.addmean {
+     background-color: #355efc;
+     border: 1px solid #fafafa;
+     padding: 0.5rem;
+     color: white;
+     text-align: center;
+}
+.addmean:hover {
+     background-color: #2d2d2d;
+     transition: all 0.3s linear;
+}
+.btn-area {
+     gap: 25px;
+}
+.note-btn {
+     background: none;
+     text-align: center;
+     text-decoration: none;
+     color: #241c15;
+     background: rgba(36, 28, 21, 0);
+     font-size: 0.8125rem;
+     font-weight: 500;
+     line-height: 1.5;
+     padding: 0.75rem 1.5rem;
+     border-radius: 2em;
+     transform: translateY(0);
+     position: relative;
+     transition: all 0.2s linear;
+}
+.note-btn:hover {
+     transform: translateY(-5px);
+     box-shadow: 0px 10px 0 0.1rem #241c15;
+     border: 1px solid #241c15;
+}
+@media screen and (max-width: 991px) {
+     .mt-small {
+          margin-top: 10rem !important;
+     }
 }

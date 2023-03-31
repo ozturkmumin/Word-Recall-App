@@ -2,13 +2,15 @@ const form = document.querySelector("form");
 const addword = document.querySelector("#add-first");
 const addmeaning = document.querySelector("#add-meaning");
 const btnDeleteAll = document.querySelector("#clearbtn");
-const taskList = document.querySelector("#myword");
+const taskList = document.querySelector(".save-word");
+const meanList = document.querySelector("#save-mean");
+const myword = document.querySelector("#myword");
 let createItem;
 eventListeners();
 loadItems();
 
 function eventListeners() {
-     form.addEventListener("submit", addNewItem);
+     form?.addEventListener("submit", addNewItem);
      taskList.addEventListener("click", deleteItem);
 }
 function loadItems() {
@@ -27,12 +29,6 @@ function getItemsFromLs() {
      return createItem;
 }
 
-function setItemToLS(text) {
-     createItem = getItemsFromLs();
-     createItem.push(text);
-     localStorage.setItem("createItem", JSON.stringify(createItem));
-}
-
 function deleteItemFromLS(text) {
      createItem = getItemsFromLs();
      createItem.forEach(function (item, index) {
@@ -44,17 +40,18 @@ function deleteItemFromLS(text) {
 }
 
 function createItemFn(text) {
-     const li = document.createElement("span");
-     li.appendChild(document.createTextNode(text));
-
+     const div = document.createElement("div");
+     div.appendChild(document.createTextNode(text));
+     div.classList = "d-flex justify-content-center";
+     div.classList = "addmean";
      const a = document.createElement("a");
-     a.classList = "delete-item float-right";
+     a.classList = "bi bi-x";
      a.setAttribute("href", "#");
      a.innerHTML = '<i class = "fas fa-times"></i>';
 
-     li.appendChild(a);
+     div.appendChild(a);
 
-     taskList.appendChild(li);
+     taskList.appendChild(div);
 }
 function deleteItem(e) {
      if (e.target.className === "bi bi-x-lg") {
@@ -66,33 +63,37 @@ function deleteItem(e) {
 }
 
 function addNewItem(e) {
-     if (addword.value === "") {
-          alert("add new item");
-     }
-
-     const li = document.createElement("span");
-
-     li.appendChild(document.createTextNode(addword.value));
-     li.appendChild(document.createTextNode(addmeaning.value));
-     const div = document.createElement("div");
-
-     li.appendChild(div);
-
-     taskList.appendChild(li);
-     setItemToLS(addword.value);
-     addword.value = "";
-     setItemToLS(addmeaning.value);
-     addmeaning.value = "";
-
      e.preventDefault();
+     const div = document.createElement("div");
+     const divmean = document.createElement("div");
+
+     div.innerText = addword.value;
+     divmean.innerText = addmeaning.value;
+     div.classList.add("addmean");
+     divmean.classList.add("addmean");
+
+     myword.appendChild(div);
+     meanList.appendChild(divmean);
+
+     // localStorage'a kaydetme işlemi
+     const words = JSON.parse(localStorage.getItem("words")) || [];
+     words.push({ word: addword.value, meaning: addmeaning.value });
+     localStorage.setItem("words", JSON.stringify(words));
 }
+const words = JSON.parse(localStorage.getItem("words")) || [];
+for (const { word, meaning } of words) {
+     const div = document.createElement("div");
+     const divmean = document.createElement("div");
+     div.classList.add("addmean");
+     divmean.classList.add("addmean");
+     div.innerText = word;
+     divmean.innerText = meaning;
+     myword.appendChild(div);
+     meanList.appendChild(divmean);
+}
+
 function deleteAllItems(e) {
-     if (confirm("are you sure")) {
-          while (taskList.firstChild) {
-               taskList.removeChild(taskList.firstChild);
-          }
-          localStorage.clear();
-     }
+     localStorage.clear();
      e.preventDefault();
 }
 btnDeleteAll.addEventListener("click", () => {
