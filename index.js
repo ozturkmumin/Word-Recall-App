@@ -71,9 +71,11 @@ function addNewItem(e) {
      divmean.innerText = addmeaning.value;
      div.classList.add("addmean");
      divmean.classList.add("addmean");
-
      myword.appendChild(div);
      meanList.appendChild(divmean);
+
+     addword.value = "";
+     addmeaning.value = "";
 
      // localStorage'a kaydetme işlemi
      const words = JSON.parse(localStorage.getItem("words")) || [];
